@@ -1,0 +1,24 @@
+# 插件资源文件（需手动添加）
+icons/*.png
+!icons/README.md
+sounds/*.mp3
+!sounds/README.md
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 日志文件
+*.log
+npm-debug.log*
+
+# 临时文件
+*.tmp
+*.temp

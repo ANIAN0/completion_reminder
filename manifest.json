@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "DeepSeek对话实时通知",
+  "version": "1.0.0",
+  "description": "监听DeepSeek对话完成，在后台发送提醒并提供侧边栏管理功能",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "notifications",
+    "tabs",
+    "windows"
+  ],
+  "host_permissions": [
+    "https://chat.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.deepseek.com/*", "https://www.chat.deepseek.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html"
+  },
+  "side_panel": {
+    "default_path": "side-panel.html"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["sounds/default-notification.mp3"],
+      "matches": ["https://chat.deepseek.com/*"]
+    },
+    {
+      "resources": ["lib/marked.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

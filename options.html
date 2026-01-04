@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提示音配置 - DeepSeek 插件</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>提示音配置</h1>
+      <p class="subtitle">自定义对话完成时的提示音</p>
+    </header>
+
+    <main class="content">
+      <section class="section">
+        <h2 class="section-title">当前提示音</h2>
+        <div class="current-sound">
+          <div class="sound-info">
+            <div class="sound-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+            </div>
+            <div class="sound-details">
+              <div class="sound-name" id="currentSoundName">默认提示音</div>
+              <div class="sound-status" id="soundStatus">使用默认音效</div>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="previewBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            试听
+          </button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">上传新提示音</h2>
+        <div class="upload-area">
+          <input type="file" id="soundInput" accept=".mp3,audio/mpeg" style="display: none;">
+          <label for="soundInput" class="upload-label" id="uploadLabel">
+            <div class="upload-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+            </div>
+            <div class="upload-text">
+              <p class="upload-title">点击上传 MP3 文件</p>
+              <p class="upload-subtitle">文件大小不超过 500KB</p>
+            </div>
+          </label>
+          <div class="file-info" id="fileInfo" style="display: none;">
+            <div class="file-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </div>
+            <div class="file-details">
+              <div class="file-name" id="fileName"></div>
+              <div class="file-size" id="fileSize"></div>
+            </div>
+            <button class="btn btn-icon" id="removeFileBtn" title="移除">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          <div class="error-message" id="errorMessage"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">其他选项</h2>
+        <div class="options-list">
+          <button class="btn btn-secondary" id="resetBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <path d="M3 3v5h5"></path>
+            </svg>
+            恢复默认提示音
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="toast" id="toast"></div>
+    </footer>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

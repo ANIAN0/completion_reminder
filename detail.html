@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSeek 内容详情</title>
+  <link rel="stylesheet" href="side-panel.css">
+  <style>
+    body {
+      padding: 0;
+    }
+    
+    .detail-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: var(--background);
+    }
+    
+    .detail-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      background-color: var(--background);
+    }
+    
+    .detail-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--foreground);
+    }
+    
+    .detail-content {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+    
+    .prompt-section {
+      background-color: var(--muted);
+      padding: 1rem;
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+    
+    .prompt-section h3 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--muted-foreground);
+      margin-bottom: 0.5rem;
+    }
+    
+    .prompt-text {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--foreground);
+      white-space: pre-wrap;
+    }
+    
+    .response-section {
+      background-color: var(--background);
+      padding: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    
+    .response-section h3 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--muted-foreground);
+      margin-bottom: 0.5rem;
+    }
+    
+    .detail-actions {
+      padding: 1rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 0.5rem;
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <div class="detail-container">
+    <div class="detail-header">
+      <h1>内容详情</h1>
+      <button class="btn btn-icon" id="closeBtn" title="关闭">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="detail-content" id="detailContent">
+    </div>
+    <div class="detail-actions">
+      <button class="btn btn-primary" id="copyBtn">复制内容</button>
+    </div>
+  </div>
+  <script src="lib/marked.min.js"></script>
+  <script src="detail.js"></script>
+</body>
+</html>
